@@ -29,9 +29,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[hsl(45,33%,98%)]">
-      <title>Sanchitha Makeovers - Luxury Bridal Makeover Services</title>
-      <meta name="description" content="Professional bridal makeover services in Bangalore by expert artists Savitha Rao and Chethana. Complete packages for makeup, hairstyles, and saree draping starting from ₹5,000." />
-      
       <Navigation />
       <HeroCollage />
       <Services />
@@ -42,7 +39,6 @@ export default function Home() {
       <Contact />
       <Footer />
 
-      {/* Scroll to top button */}
       <Button
         onClick={scrollToTop}
         className={`fixed bottom-6 right-6 w-12 h-12 rounded-full shadow-lg transition-all duration-300 ${

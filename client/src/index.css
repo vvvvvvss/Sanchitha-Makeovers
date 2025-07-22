@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* 🎨 Theme Variables */
 :root {
   --background: hsl(0, 0%, 100%);
   --foreground: hsl(20, 14.3%, 4.1%);
@@ -24,7 +27,7 @@
   --ring: hsl(20, 14.3%, 4.1%);
   --radius: 0.5rem;
 
-  /* Custom purple palette from the design */
+  /* 💜 Custom Purple Palette */
   --purple-light: hsl(299, 29%, 91%);
   --purple-secondary: hsl(298, 50%, 70%);
   --purple-primary: hsl(286, 39%, 49%);
@@ -33,6 +36,7 @@
   --cream: hsl(45, 33%, 98%);
 }
 
+/* 🌑 Dark Mode Variables */
 .dark {
   --background: hsl(240, 10%, 3.9%);
   --foreground: hsl(0, 0%, 98%);
@@ -56,6 +60,7 @@
   --radius: 0.5rem;
 }
 
+/* ========== @layer base ========== */
 @layer base {
   * {
     @apply border-border;
@@ -64,54 +69,111 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
-}
 
-/* Custom animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  html {
+    scroll-behavior: smooth;
   }
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.8s ease-out forwards;
+/* ========== @layer components ========== */
+@layer components {
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .signature-text {
+    font-family: 'Playfair Display', serif;
+    color: var(--purple-primary);
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    text-align: right;
+  }
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
+/* ========== @layer utilities ========== */
+@layer utilities {
+  .hex-container {
+    position: relative;
+    width: 540px;
+    height: 460px;
+    margin-left: 1rem;
+    overflow: visible;
+  }
+
+  .hex {
+    width: 180px;
+    height: 156px;
+    clip-path: polygon(
+      25% 0%, 75% 0%,
+      100% 50%, 75% 100%,
+      25% 100%, 0% 50%
+    );
+    position: absolute;
+    overflow: hidden;
+    transition: transform 0.4s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  }
+
+  .hex img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+     display: block;
+  }
+
+  .hex:hover {
+    transform: scale(1.015);
+  }
+
+  /* Hex puzzle layout: Honeycomb pattern */
+.hex-1 { top: -15px; left: -110px; opacity: 0.6; z-index: 1; } /* half-seen on top */
+.hex-2 { top: 67px; left: 35.5px; z-index: 2; }
+.hex-3 { top: -98px; left: 35.5px; z-index: 2; }
+.hex-4 { top: 40px; left: 360px; z-index: 2; }
+.hex-5 { top: 140px; left: 90px; z-index: 3; }
+.hex-6 { top: 140px; left: 270px; z-index: 3; }
+.hex-7 { top: 240px; left: 180px; z-index: 4; }
+
+  @media (max-width: 640px) {
+    .hex-container {
+      transform: scale(0.6);
+      transform-origin: top left;
+      margin-left: -1rem;
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
-/* Custom scrollbar */
+/* ✅ Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
-
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
-
 ::-webkit-scrollbar-thumb {
   background: var(--purple-primary);
   border-radius: 4px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: var(--purple-deep);
-}
-
-/* Playfair Display font for headings */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
-
-.font-playfair {
-  font-family: 'Playfair Display', serif;
-}
-
-.font-inter {
-  font-family: 'Inter', sans-serif;
 }
