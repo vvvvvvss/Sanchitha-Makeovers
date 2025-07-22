@@ -5,7 +5,7 @@ export default {
   content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
   safelist: [
   'hex-1', 'hex-2', 'hex-3', 'hex-4',
-  'hex-5', 'hex-6', 'hex-7'
+  'hex-5', 'hex-6', 'hex-7','hex-8','hex-9','hex-10'
 ],
 
   theme: {

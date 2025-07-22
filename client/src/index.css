@@ -134,11 +134,13 @@
 .hex-1 { top: -15px; left: -110px; opacity: 0.6; z-index: 1; } /* half-seen on top */
 .hex-2 { top: 67px; left: 35.5px; z-index: 2; }
 .hex-3 { top: -98px; left: 35.5px; z-index: 2; }
-.hex-4 { top: 40px; left: 360px; z-index: 2; }
-.hex-5 { top: 140px; left: 90px; z-index: 3; }
-.hex-6 { top: 140px; left: 270px; z-index: 3; }
-.hex-7 { top: 240px; left: 180px; z-index: 4; }
-
+.hex-4 { top: -15px; left: 180px; z-index: 2; }
+.hex-5 { top: 230px; left: 35px; z-index: 3; }
+.hex-6 { top: 150px; left: -110px; z-index: 3; }
+.hex-7 { top: 315px; left: -110px; z-index: 4; }
+.hex-8  { top: -98px; left: 320px; z-index: 4; }    
+.hex-9  { top: 150px; left: 180px; z-index: 4; }     
+.hex-10 { top: 67px; left: 320px; z-index: 5; } 
   @media (max-width: 640px) {
     .hex-container {
       transform: scale(0.6);
