@@ -6,32 +6,38 @@ export default function Portfolio() {
     {
       image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800",
       title: "Traditional Elegance",
-      description: "Complete bridal transformation for a South Indian wedding"
+      description: "Complete bridal transformation for a South Indian wedding",
+      url: "https://www.instagram.com/savitharao_designs/p/DK_flQTTdzj/"
     },
     {
       image: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800",
       title: "Modern Glam",
-      description: "Contemporary makeup with subtle highlighting"
+      description: "Contemporary makeup with subtle highlighting",
+      url: "https://www.instagram.com/savitharao_designs/p/DLse1O6T8MH/"
     },
     {
       image: "https://images.unsplash.com/photo-1571769267292-e24b1f56c7a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800",
       title: "Henna Artistry",
-      description: "Intricate traditional mehndi designs"
+      description: "Intricate traditional mehndi designs",
+      url: "https://www.instagram.com/savitharao_designs/p/DLbryKKTcLy/"
     },
     {
       image: "https://images.unsplash.com/photo-1522337660859-02fbefca4702?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800",
       title: "Floral Hair Art",
-      description: "Traditional updo with fresh jasmine flowers"
+      description: "Traditional updo with fresh jasmine flowers",
+      url: "https://www.instagram.com/savitharao_designs/p/DKyZePUT94G/"
     },
     {
       image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800",
       title: "Royal Jewelry",
-      description: "Traditional gold jewelry styling and coordination"
+      description: "Traditional gold jewelry styling and coordination",
+      url: "https://www.instagram.com/savitharao_designs/p/DJ3L6vcyeGv/"
     },
     {
       image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800",
       title: "Transformation",
-      description: "Complete makeover process documentation"
+      description: "Complete makeover process documentation",
+      url: "https://www.instagram.com/savitharao_designs/p/DJniprMSm9f/"
     }
   ];
 
@@ -53,24 +59,25 @@ export default function Portfolio() {
         {/* Portfolio Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {portfolioItems.map((item, index) => (
-            <div key={index} className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition duration-300">
-              <img 
-                src={item.image} 
-                alt={item.title} 
-                className="w-full h-80 object-cover group-hover:scale-105 transition duration-300" 
-              />
-              <div 
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end"
-                style={{ background: 'linear-gradient(to top, hsla(320, 91%, 22%, 0.8), transparent)' }}
-              >
-                <div className="p-6 text-white">
-                  <h3 className="font-playfair text-xl font-semibold mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm">
-                    {item.description}
-                  </p>
-                </div>
+            <div
+              key={index}
+              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition duration-300"
+              style={{ minHeight: 400 }}
+            >
+              <iframe
+                src={`https://www.instagram.com/p/${item.url.split("/p/")[1].split("/")[0]}/embed`}
+                width="100%"
+                height="400"
+                frameBorder="0"
+                scrolling="no"
+                allowTransparency={true}
+                allow="encrypted-media"
+                className="w-full rounded-2xl"
+              ></iframe>
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition duration-300 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100">
+                <h4 className="text-white text-xl font-bold mb-2 text-center px-4">{item.title}</h4>
+                <p className="text-white text-base text-center px-4">{item.description}</p>
               </div>
             </div>
           ))}
